@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://bosafo3ja3pdy"]
+
+[ext_resource type="Script" path="res://scene/globals/sound_manager.gd" id="1_eexbt"]
+
+[node name="SoundManager" type="Node"]
+process_mode = 3
+script = ExtResource("1_eexbt")
+
+[node name="SFX" type="Node" parent="."]
+
+[node name="Attack" type="AudioStreamPlayer" parent="SFX"]
+bus = &"SFX"
+
+[node name="Jump" type="AudioStreamPlayer" parent="SFX"]
+bus = &"SFX"
+
+[node name="UIPress" type="AudioStreamPlayer" parent="SFX"]
+bus = &"SFX"
+
+[node name="UIFocus" type="AudioStreamPlayer" parent="SFX"]
+volume_db = -5.105
+bus = &"SFX"
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+bus = &"BGM"

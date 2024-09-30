@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bost7q365u0dv"]
+
+[ext_resource type="Script" path="res://classes/Warp.gd" id="1_asnjl"]
+[ext_resource type="Texture2D" uid="uid://c8dkwi3wndo7i" path="res://assets/Buildings.png" id="2_m3boa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8skb2"]
+size = Vector2(58, 63.5)
+
+[node name="MineGate" type="Area2D"]
+script = ExtResource("1_asnjl")
+
+[node name="Buildings" type="Sprite2D" parent="."]
+position = Vector2(-23, -48)
+texture = ExtResource("2_m3boa")
+region_enabled = true
+region_rect = Rect2(274, 208, 127, 161)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-25, -32.75)
+shape = SubResource("RectangleShape2D_8skb2")

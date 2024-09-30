@@ -1,0 +1,107 @@
+[gd_scene load_steps=4 format=3 uid="uid://7edd7q0sj5jt"]
+
+[ext_resource type="PackedScene" uid="uid://dj13djjbkr1j2" path="res://assets/UI/volume_slider.tscn" id="1_4aemo"]
+[ext_resource type="Theme" uid="uid://bycks5wxs7u77" path="res://assets/UI/main_theme.tres" id="1_ym2jc"]
+[ext_resource type="Script" path="res://assets/UI/menu_screen.gd" id="2_5yx5a"]
+
+[node name="MenuScreen" type="Control"]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_ym2jc")
+script = ExtResource("2_5yx5a")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.482353)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "暂停"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AudioSettings" type="PanelContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="G" type="GridContainer" parent="VBoxContainer/AudioSettings"]
+layout_mode = 2
+theme_override_constants/h_separation = 8
+columns = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/AudioSettings/G"]
+layout_mode = 2
+text = "主音量"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="VolumeSlider" parent="VBoxContainer/AudioSettings/G" instance=ExtResource("1_4aemo")]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="Label2" type="Label" parent="VBoxContainer/AudioSettings/G"]
+layout_mode = 2
+text = "音乐"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="VolumeSlider2" parent="VBoxContainer/AudioSettings/G" instance=ExtResource("1_4aemo")]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+bus = &"BGM"
+
+[node name="Label3" type="Label" parent="VBoxContainer/AudioSettings/G"]
+layout_mode = 2
+text = "音效"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="VolumeSlider3" parent="VBoxContainer/AudioSettings/G" instance=ExtResource("1_4aemo")]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+bus = &"SFX"
+
+[node name="Actions" type="PanelContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Actions"]
+layout_mode = 2
+alignment = 1
+
+[node name="Resume" type="Button" parent="VBoxContainer/Actions/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "继续游戏"
+
+[node name="Quit" type="Button" parent="VBoxContainer/Actions/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "退出游戏"
+
+[connection signal="pressed" from="VBoxContainer/Actions/HBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="VBoxContainer/Actions/HBoxContainer/Quit" to="." method="_on_quit_pressed"]

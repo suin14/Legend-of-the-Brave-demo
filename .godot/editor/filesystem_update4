@@ -1,0 +1,9 @@
+res://scene/globals/sound_manager.tscn
+res://assets/UI/main_theme.tres
+res://assets/vignette.gdshader
+res://scene/globals/game.tscn
+res://scene/player.tscn
+res://scene/world.tscn
+res://assets/UI/menu_screen.tscn
+res://assets/UI/volume_slider.tscn
+res://scene/globals/vigenette.tscn

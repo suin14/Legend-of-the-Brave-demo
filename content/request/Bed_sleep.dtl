@@ -1,0 +1,8 @@
+这是一张床，是否选择休息一会？
+- 是
+	do Game.change_scene("res://scenes/room.tscn", {})
+	你躺下来休息，度过了半个小时…… 
+	do Game.skip_time(30.0)
+
+- 否
+do Game.done_action()

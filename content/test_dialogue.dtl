@@ -1,0 +1,8 @@
+character/unit_test_character (Default): 这是一段测试对话。 this's a test dialogue.
+join character/unit_test_character 0
+character/unit_test_character (Default): 肖像出现
+leave character/unit_test_character
+character/unit_test_character (Default): 肖像消失
+出现选项
+- 选项1
+- 选项2
